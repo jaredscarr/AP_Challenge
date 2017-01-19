@@ -32,11 +32,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function pushImpressions(impressions) {
-        // modifies to the group to be ready to send to GA
+        // Check if dataLayer is initialized if not then init it.
+        window.dataLayer = window.dataLayer || [];
         var ecommerceObject = {
             'ecommerce': {'impressions': impressions}
         }
         // here we would actually push the dataLayer
+        dataLayer.push(ecommerceObject);
         console.log('dataLayer is: ', ecommerceObject);
         return ecommerceObject;
     }
@@ -59,10 +61,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // create tracker object this code will only work if I really get GA setup
-    // for the site which I have not done
+    // create tracker object. This code will only work if I really get GA setup
+    // for the site which I have not done which is why it's commented out.
+
     // ga('create', '<tracker-id>', 'auto');
+
     // require ecommerce plugin
+
     // ga('require', 'ec');
     getImpressions();
 });
