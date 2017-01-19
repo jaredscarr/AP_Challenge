@@ -61,14 +61,14 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // create tracker object. This code will only work if I really get GA setup
-    // for the site which I have not done which is why it's commented out.
+    // If running this on a local server comment out the ga() objects below
+    // create tracker object. 
 
-    // ga('create', '<tracker-id>', 'auto');
+    ga('create', '<tracker-id>', 'auto');
 
     // require ecommerce plugin
 
-    // ga('require', 'ec');
+    ga('require', 'ec');
     getImpressions();
 });
 
