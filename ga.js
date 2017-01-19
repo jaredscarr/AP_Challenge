@@ -1,46 +1,3 @@
-// a) set up product impressions
-// wrap the below in a script tag or if developers are comfortable store
-// in separate location (ideal)
-// var PRODUCTS = [{
-//             'name': 'Backpack',
-//             'id': '1234',
-//             'price': '$200',
-//             'brand': 'Travel Brand',
-//             'category': 'Accessories',
-//             'variant': 1,
-//             'list': 'Search Results',
-//             'position': 1
-//             },
-//             {
-//             'name': 'Scarf',
-//             'id': '4567',
-//             'price': '$10,00',
-//             'brand': 'Travel Brand',
-//             'category': 'Apparel',
-//             'variant': 1,
-//             'list': 'Search Results',
-//             'position': 2
-//             },
-//             {'name': 'RFID Wallet',
-//             'id': '8901',
-//             'price': '80',
-//             'brand': 'Travel Brand',
-//             'category': 'Accessories',
-//             'variant': 0,
-//             'list': 'Search Results',
-//             'position': 3
-//             },
-//             {
-//             'name': 'Protien Bar',
-//             'id': '2543',
-//             'price': '$200',
-//             'brand': 'Travel Brand',
-//             'category': 'Accessories',
-//             'variant': 1,
-//             'list': 'Search Results',
-//             'position': 4
-//             }]
-
 document.addEventListener("DOMContentLoaded", function() {
     console.log('Your document is ready!');
 
@@ -51,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function groupImpressions(productList) {
-        // Assuming there is access to a list of products
         var group = [];
         for (var i = 0; i < productList.length; i++) {
             // map the object from the list to the impression
@@ -72,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 group = [];
             }
         }
-        console.log('Complete.');
         return 'Complete';
     }
 
@@ -104,11 +59,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // create tracker object
-    // ga('create', 'UA-XXXXX-Y', 'auto');
+    // create tracker object this code will only work if I really get GA setup
+    // for the site which I have not done
+    // ga('create', '<tracker-id>', 'auto');
     // require ecommerce plugin
     // ga('require', 'ec');
-    // groupImpressions(PRODUCTS);
     getImpressions();
 });
 
