@@ -45,9 +45,9 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log('Your document is ready!');
 
     function getImpressions() {
-        // main = document.getElementById('main');
-        elements = document.getElementsByTagName('data-product-name');
-        console.log(elements);
+        products = document.querySelectorAll('[data-product-name]');
+        console.log(products);
+        groupImpressions(products);
     }
 
     function groupImpressions(productList) {
@@ -56,14 +56,13 @@ document.addEventListener("DOMContentLoaded", function() {
         for (var i = 0; i < productList.length; i++) {
             // map the object from the list to the impression
             var impression = {
-                'name': productList[i].name,
-                'id': productList[i].id,
-                'price': escapeChars(productList[i].price),
-                'brand': productList[i].brand,
-                'category': productList[i].category,
-                'variant': setVariant(productList[i].variant),
-                'list': productList[i].searchResults,
-                'position': productList[i].position
+                'name': productList[i].getAttribute('data-product-name'),
+                'id': productList[i].getAttribute('data-product-id'),
+                'price': escapeChars(productList[i].getAttribute('data-product-price')),
+                'category': productList[i].getAttribute('data-product-category'),
+                'variant': setVariant(productList[i].getAttribute('data-product-variant')),
+                'list': productList[i].getAttribute('data-product-list'),
+                'position': i.toString()
             }
             //adds the impression to the group
             group.push(impression);
@@ -112,3 +111,4 @@ document.addEventListener("DOMContentLoaded", function() {
     // groupImpressions(PRODUCTS);
     getImpressions();
 });
+
